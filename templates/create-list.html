@@ -1,0 +1,20 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% include "header.html" %}
+
+<body xmlns="http://www.w3.org/1999/html">
+    <div class="to-do-list">
+        <h3>Create your To-Do List!</h3>
+    </div>
+     <div class="form_container">
+
+        {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+    </div>
+<<!--    <form action="/add" method="post">
+        <input type="text" name="tasks" placeholder="Add a new task">
+        <button type="submit">Add</button>
+    </form>
+-->
+
+</body>
+
+{% include "footer.html" %}

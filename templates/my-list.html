@@ -1,0 +1,18 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% include "header.html" %}
+{% block content %}
+<body >
+    <div class="mylist">
+    <H2> My To-Do List</H2>
+    </div>
+    <div class="list">
+    <ul >
+        {% for task in tasks %}
+            <li>{{ task.description }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+</body>
+
+{% include "footer.html" %}{% endblock %}
+</html>

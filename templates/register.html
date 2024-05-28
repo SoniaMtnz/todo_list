@@ -1,0 +1,17 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% include "header.html" %}
+
+<body>
+    <div class="register">
+        <h1> Sign in </h1>
+        <link rel="stylesheet" href="static/assets/css/styles.css"/>
+
+    </div>
+    <div class="form_container">
+
+        {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+    </div>
+
+</body>
+
+{% include "footer.html" %}

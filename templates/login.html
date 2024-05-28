@@ -1,0 +1,29 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% block content %}
+{% include "header.html" %}
+
+
+<body>
+    <div class="login-container">
+        <h3> Welcome Back!</h3>
+        <span class="subheading">Let's get stuff done!</span>
+        <link rel="stylesheet" href="static/assets/css/styles.css"/>
+    </div>
+     <div class="form_container">
+        <div class="row">
+      <!-- Adding Flash message here for users trying to register twice -->
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      {% for message in messages %}
+      <p class="flash">{{ message }}</p>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <div id="form" class="col-lg-8 col-md-10 mx-auto">
+        {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+    </div>
+</body>
+
+{% include "footer.html" %} {% endblock %}
+
+</html>
